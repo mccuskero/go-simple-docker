@@ -1,5 +1,5 @@
 # Use the latest golang image as the base image
-FROM golang:lastest
+FROM golang:1.20
 
 LABEL maintainer="Owen McCusker <mccuskerowen@gmail.com>"
 
