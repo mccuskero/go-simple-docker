@@ -15,6 +15,11 @@ $ cd go-simple-docker
 
 ## Build the project 
 
+### Build the image
+```
+docker build .
+```
+
 ## Run the project
 
 
