@@ -1,9 +1,17 @@
 .DEFAULT_GOAL := build
 
 BIN_FILE=go-simple-docker
+IMAGE_VERSION = v0.1.1
+BUILDER_IMAGE_NAME=gosimpledocker 
 
 build:
 	@go build -o "${BIN_FILE}"
+
+build-dockerfile:				## Create dockerfile which acts as build environment
+	@docker build --pull -t $(BUILDER_IMAGE_NAME) .
+
+push: ## Push the images to local and remote registry
+	@docker push $(IMAGE_NAME):$(IMAGE_VERSION)
 
 clean:
 	go clean
